@@ -1,0 +1,20 @@
+{
+  "learning_rate": {"_type": "choice", "_value": [1e-2]},
+  "weight_decay":  {"_type": "choice", "_value": [1e-4] }, 
+  "llm_ctr_model": {"_type": "choice",  "_value": ["PLUG"]},  
+  "llm_model":    {"_type": "choice",  "_value": ["llama_1B"]},
+  "npy_layer":    {"_type": "choice",  "_value": ["last"]},
+  "dataset_name":  {"_type": "choice",  "_value": ["frappe","beauty"]},
+  "ctr_model_name":    {"_type": "choice",  "_value": ["DCNv2_PLUG"]}, 
+  "reduce_dimension":  {"_type": "choice",  "_value": [32, 64]},
+  "alpha":        {"_type": "choice",  "_value": [1]},
+  "tao":          {"_type": "choice",  "_value": [1]},
+  "beta":        {"_type": "choice",  "_value": [2,1,0.1,0.01,0.001]},
+  "interaction_layers": {"_type": "choice","_value": [3]},
+  "repeats":       {"_type": "choice",  "_value": [6]},
+  "epoch":         {"_type": "choice",  "_value": [70]},
+  "batch_size":    {"_type": "choice",  "_value": [4096]},
+  "embed_dim":     {"_type": "choice",  "_value": [16]},
+  "norm":          {"_type": "choice",  "_value": ["norm"]},
+  "save_path":     {"_type": "choice",  "_value": ["hp_alpha_fb2"]}
+}     

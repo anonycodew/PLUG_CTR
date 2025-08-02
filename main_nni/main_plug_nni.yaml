@@ -1,0 +1,32 @@
+experimentName: plug_ctr
+trialConcurrency: 5
+maxExecDuration: 10000h
+maxTrialNum: 2000
+#choice: local, remote, pai
+trainingServicePlatform: local
+searchSpacePath: plug_ctr_nni.json 
+#choice: true, false 
+logDir: "./base_nni" 
+experimentWorkingDirectory: "./nni_chkpt"
+useAnnotation: false
+# use_active_gpu: False
+tuner:
+  #choice: TPE, Random, Anneal, Evolution, BatchTuner, GridSearch 
+  #SMAC (SMAC should be installed through nnictl)
+  builtinTunerName: GridSearch
+  classArgs:
+    #choice: maximize, minimize
+    optimize_mode: minimize
+trial:
+  command: python run_plug_nni.py
+  codeDir: .
+  gpuIndicvscode: 0
+  gpuNum: 1
+machineList:
+    useActiveGpu: True
+    maxTrialNumPerGpu: 100
+    gpuIndices: 0
+localConfig:
+    useActiveGpu: True
+    maxTrialNumPerGpu: 100
+    gpuIndices: 0
